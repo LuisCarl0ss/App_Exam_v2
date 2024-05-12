@@ -1,0 +1,39 @@
+<body>
+      <div class="exam-container">
+        <h2>Sección 1: Audio</h2>
+    
+        <div class="question" *ngIf="currentQuestion === 1">
+          <p>Pregunta 1: Ejemplo de pregunta</p>
+          <ul class="options">
+            <li class="option"><input type="radio" name="q5" value="a"> a) </li>
+            <li class="option"><input type="radio" name="q5" value="b"> b) </li>
+            <li class="option"><input type="radio" name="q5" value="c"> c) </li>
+          </ul>
+          <button class="btn" (click)="nextQuestion()">Siguiente Pregunta</button>
+        </div>
+    
+        <div class="question" *ngIf="currentQuestion === 2">
+          <p>Pregunta 2: Ejemplo de pregunta</p>
+          <ul class="options">
+            <li class="option"><input type="radio" name="q5" value="a"> a) </li>
+            <li class="option"><input type="radio" name="q5" value="b"> b) </li>
+            <li class="option"><input type="radio" name="q5" value="c"> c) </li>
+          </ul>
+          <button class="btn" (click)="prevQuestion()">Anterior Pregunta</button>
+          <button class="btn" (click)="nextQuestion()">Siguiente Pregunta</button>
+        </div>
+    
+        <!-- Otras preguntas aquí -->
+    
+        <div class="question" *ngIf="currentQuestion === 3">
+          <p>Pregunta {{ totalQuestions }}: Ejemplo de pregunta</p>
+          <ul class="options">
+            <li class="option"><input type="radio" name="q5" value="a"> a) </li>
+            <li class="option"><input type="radio" name="q5" value="b"> b) </li>
+            <li class="option"><input type="radio" name="q5" value="c"> c) </li>
+          </ul>
+          <button class="btn" (click)="prevQuestion()">Anterior Pregunta</button>
+          <button class="btn" (click)="submitExam()">Ir a seccion gramatica</button>
+        </div>
+      </div>
+</body>
