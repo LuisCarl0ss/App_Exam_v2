@@ -1,39 +1,74 @@
 <body>
       <div class="exam-container">
         <h2>Sección 1: Lectora</h2>
-    
+
         <div class="question" *ngIf="currentQuestion === 1">
-          <p>Pregunta 1: Ejemplo de pregunta</p>
-          <ul class="options">
-            <li class="option"><input type="radio" name="q5" value="a"> a) </li>
-            <li class="option"><input type="radio" name="q5" value="b"> b) </li>
-            <li class="option"><input type="radio" name="q5" value="c"> c) </li>
-          </ul>
+          <p>Title: The Importance of Time Management</p>
+          <p class="text-1">
+            Time management is a crucial skill in today's fast-paced world. It involves organizing and planning how to divide your time between specific activities effectively. 
+            Whether you're a student, a professional, or a homemaker, mastering time management can lead to increased productivity and reduced stress levels.
+            One key aspect of time management is setting goals. By defining clear objectives, you can prioritize tasks and allocate your time accordingly. 
+            This helps prevent procrastination and ensures that important deadlines are met. Additionally, breaking down larger goals into smaller, manageable tasks can make 
+            them seem less overwhelming and more achievable.
+          </p>
           <button class="btn" (click)="nextQuestion()">Siguiente Pregunta</button>
         </div>
-    
+
         <div class="question" *ngIf="currentQuestion === 2">
-          <p>Pregunta 2: Ejemplo de pregunta</p>
+          <p>Lectura en Ingles</p>
+          <p class="text-1">
+            Another important component of time management is identifying and eliminating time-wasting activities. This might involve minimizing distractions, 
+            such as social media or excessive multitasking, that can eat into your productive hours. Learning to say no to non-essential tasks and delegating 
+            responsibilities when possible are also valuable time-saving strategies.
+            Effective time management also requires flexibility and adaptability. Unexpected events and interruptions are inevitable, so it's essential to have 
+            contingency plans in place and be willing to adjust your schedule as needed.
+          </p>
+          <button class="btn" (click)="prevQuestion()">Anterior Pregunta</button>
+          <button class="btn" (click)="nextQuestion()">Siguiente Pregunta</button>
+        </div>
+
+        <div class="question" *ngIf="currentQuestion === 3">
+          <p>Lectura en Ingles</p>
+          <p class="text-1">
+            Learning to prioritize tasks based on their urgency and importance can help you make the most of your time, even when faced with unexpected challenges.
+            In summary, mastering time management is essential for achieving success in both professional and personal endeavors. By setting goals, 
+            eliminating time-wasting activities, and remaining flexible in the face of challenges, you can maximize your productivity and minimize stress in your daily life.
+          </p>
+          <button class="btn" (click)="prevQuestion()">Anterior Pregunta</button>
+          <button class="btn" (click)="nextQuestion()">Siguiente Pregunta</button>
+        </div>
+    
+        <div class="question" *ngIf="currentQuestion === 4">
+          <p>Pregunta 1: Why is goal setting important in time management?</p>
           <ul class="options">
-            <li class="option"><input type="radio" name="q5" value="a"> a) </li>
-            <li class="option"><input type="radio" name="q5" value="b"> b) </li>
-            <li class="option"><input type="radio" name="q5" value="c"> c) </li>
+            <li class="option"><input type="radio" name="q5" value="a" (click)="seleccionarRespuesta('a')"> a) It reduces stress levels. </li>
+            <li class="option"><input type="radio" name="q5" value="b" (click)="seleccionarRespuesta('b')"> b) It helps prioritize tasks effectively. </li>
+            <li class="option"><input type="radio" name="q5" value="c" (click)="seleccionarRespuesta('c')"> c) It encourages excessive multitasking. </li>
           </ul>
           <button class="btn" (click)="prevQuestion()">Anterior Pregunta</button>
           <button class="btn" (click)="nextQuestion()">Siguiente Pregunta</button>
         </div>
     
-        <!-- Otras preguntas aquí -->
-    
-        <div class="question" *ngIf="currentQuestion === 3">
-          <p>Pregunta {{ totalQuestions }}: Ejemplo de pregunta</p>
+        <div class="question" *ngIf="currentQuestion === 5">
+          <p>Pregunta 2: What is a key strategy for eliminating time-wasting activities?</p>
           <ul class="options">
-            <li class="option"><input type="radio" name="q5" value="a"> a) </li>
-            <li class="option"><input type="radio" name="q5" value="b"> b) </li>
-            <li class="option"><input type="radio" name="q5" value="c"> c) </li>
+            <li class="option"><input type="radio" name="q5" value="a" (click)="seleccionarRespuesta('a')"> a) Minimizing distractions. </li>
+            <li class="option"><input type="radio" name="q5" value="b" (click)="seleccionarRespuesta('b')"> b) Increasing social media usage. </li>
+            <li class="option"><input type="radio" name="q5" value="c" (click)="seleccionarRespuesta('c')"> c) Saying yes to non-essential tasks. </li>
           </ul>
           <button class="btn" (click)="prevQuestion()">Anterior Pregunta</button>
-          <button class="btn" (click)="submitExam()">Ir a seccion audio</button>
+          <button class="btn" (click)="nextQuestion()">Siguiente Pregunta</button>
+        </div>
+    
+        <div class="question" *ngIf="currentQuestion === 6">
+          <p>Pregunta 3: How can one remain flexible in time management?</p>
+          <ul class="options">
+            <li class="option"><input type="radio" name="q5" value="a" (click)="seleccionarRespuesta('a')"> a) By sticking strictly to the original schedule. </li>
+            <li class="option"><input type="radio" name="q5" value="b" (click)="seleccionarRespuesta('b')"> b) By having contingency plans and adjusting schedules when necessary. </li>
+            <li class="option"><input type="radio" name="q5" value="c" (click)="seleccionarRespuesta('c')"> c) By avoiding unexpected events altogether. </li>
+          </ul>
+          <button class="btn" (click)="prevQuestion()">Anterior Pregunta</button>
+          <button class="btn" (click)="irAudio()">Ir a seccion audio</button>
         </div>
       </div>
 </body>

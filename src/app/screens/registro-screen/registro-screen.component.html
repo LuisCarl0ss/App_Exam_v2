@@ -11,14 +11,26 @@
             <section>
                     <div class="mb-3">
                         <h1 class="title">Registro</h1>
-                        <form [formGroup]="formReg" (ngSubmit)="onSubmit()" class="row g-3">
+                        <form [formGroup]="formReg" (ngSubmit)="verificaRegistro()" class="row g-3">
                             <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Correo</label>
                             <input type="email" class="form-control" id="inputEmail4" placeholder="Correo Institucional" formControlName="email">
+                            <!-- <div *ngIf="formReg.get('email')?.errors?.required && formReg.get('email').touched" class="text-danger">El correo es requerido.</div>
+                            <div *ngIf="formReg.get('email')?.errors?.pattern && formReg.get('email').touched" class="text-danger">El correo no es válido o no tiene la terminación '@correo.buap.mx'.</div> -->
+                            <div *ngIf="formReg.controls['email'].hasError('required') && formReg.controls['email'].touched" class="text-danger">El correo es requerido.</div>
+                            <!-- <div *ngIf="formReg.controls['email'].errors?.required && formReg.controls['email'].touched" class="text-danger">El correo es requerido.</div> -->
+                            <div *ngIf="formReg.controls['email'].hasError('pattern') && formReg.controls['email'].touched" class="text-danger">El correo no es válido o no tiene la terminación '@correo.buap.mx'.</div>
+                            <!-- <div *ngIf="formReg.controls['email'].errors?.pattern && formReg.controls['email'].touched" class="text-danger">El correo no es válido o no tiene la terminación '@correo.buap.mx'.</div> -->
                             </div>
                             <div class="col-md-6">
                             <label for="inputPassword4" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña 8-12 digitos" formControlName="password">
+                            <!-- <div *ngIf="formReg.get('password')?.errors?.required && formReg.get('password').touched" class="text-danger">La contraseña es requerida.</div>
+                            <div *ngIf="formReg.get('password')?.hasError('minlength') && formReg.get('password').touched" class="text-danger">La contraseña debe tener al menos 8 caracteres.</div>
+                            <div *ngIf="formReg.get('password')?.hasError('maxlength') && formReg.get('password').touched" class="text-danger">La contraseña debe tener como máximo 12 caracteres.</div> -->
+                            <!-- <div *ngIf="formReg.controls['password'].errors?.required && formReg.controls['password'].touched" class="text-danger">La contraseña es requerida.</div> -->                            <div *ngIf="formReg.controls['password'].hasError('required') && formReg.controls['password'].touched" class="text-danger">La contraseña es requerida.</div>
+                            <div *ngIf="formReg.controls['password'].hasError('minlength') && formReg.controls['password'].touched" class="text-danger">La contraseña debe tener al menos 8 caracteres.</div>
+                            <div *ngIf="formReg.controls['password'].hasError('maxlength') && formReg.controls['password'].touched" class="text-danger">La contraseña debe tener como máximo 12 caracteres.</div>
                             </div>
                             <div class="col-12">
                             <button type="submit" class="btn btn-primary">Registrarte</button>

@@ -1,39 +1,53 @@
 <body>
       <div class="exam-container">
-        <h2>Sección 1: Audio</h2>
+        <h2>Sección 2: Audio</h2>
     
         <div class="question" *ngIf="currentQuestion === 1">
-          <p>Pregunta 1: Ejemplo de pregunta</p>
+          <p>Ejercicio 1: Escucha la oracion en ingles, selecciona la oracion en español.</p>
+          <p>Audio</p>
+          <audio controls>
+            <source src="assets\audio\Audio_pregunta1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
           <ul class="options">
-            <li class="option"><input type="radio" name="q5" value="a"> a) </li>
-            <li class="option"><input type="radio" name="q5" value="b"> b) </li>
-            <li class="option"><input type="radio" name="q5" value="c"> c) </li>
+            <li class="option"><input type="radio" name="q5" value="a" (click)="seleccionarRespuesta('a')"> a) Hace frio </li>
+            <li class="option"><input type="radio" name="q5" value="b" (click)="seleccionarRespuesta('b')"> b) Tengo frio </li>
+            <li class="option"><input type="radio" name="q5" value="c" (click)="seleccionarRespuesta('c')"> c) Tengo un resfriado</li>
           </ul>
+          <button class="btn" (click)="regresarLectora()">Regresar Lectora</button>
           <button class="btn" (click)="nextQuestion()">Siguiente Pregunta</button>
         </div>
     
         <div class="question" *ngIf="currentQuestion === 2">
-          <p>Pregunta 2: Ejemplo de pregunta</p>
+          <p>Ejercicio 2: Escucha la oracion en ingles, selecciona la oracion en español.</p>
+          <p>Audio</p>
+          <audio controls>
+            <source src="assets\audio\Audio_pregunta2.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
           <ul class="options">
-            <li class="option"><input type="radio" name="q5" value="a"> a) </li>
-            <li class="option"><input type="radio" name="q5" value="b"> b) </li>
-            <li class="option"><input type="radio" name="q5" value="c"> c) </li>
+            <li class="option"><input type="radio" name="q5" value="a" (click)="seleccionarRespuesta('a')"> a) ¿Hay algo alli que ayuda?</li>
+            <li class="option"><input type="radio" name="q5" value="b" (click)="seleccionarRespuesta('b')"> b) ¿Hay algo que pueda hacer para ayudar?</li>
+            <li class="option"><input type="radio" name="q5" value="c" (click)="seleccionarRespuesta('c')"> c) ¿Me puedes ayudar con algo?</li>
           </ul>
           <button class="btn" (click)="prevQuestion()">Anterior Pregunta</button>
           <button class="btn" (click)="nextQuestion()">Siguiente Pregunta</button>
         </div>
     
-        <!-- Otras preguntas aquí -->
-    
         <div class="question" *ngIf="currentQuestion === 3">
-          <p>Pregunta {{ totalQuestions }}: Ejemplo de pregunta</p>
+          <p>Ejercicio 3: Escucha la oracion en ingles, selecciona la oracion en español.</p>
+          <p>Audio</p>
+          <audio controls>
+            <source src="assets\audio\Audio_pregunta3.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
           <ul class="options">
-            <li class="option"><input type="radio" name="q5" value="a"> a) </li>
-            <li class="option"><input type="radio" name="q5" value="b"> b) </li>
-            <li class="option"><input type="radio" name="q5" value="c"> c) </li>
+            <li class="option"><input type="radio" name="q5" value="a" (click)="seleccionarRespuesta('a')"> a) ¿Como se llama tu perro?</li>
+            <li class="option"><input type="radio" name="q5" value="b" (click)="seleccionarRespuesta('b')"> b) ¿Que tiene el perro?</li>
+            <li class="option"><input type="radio" name="q5" value="c" (click)="seleccionarRespuesta('c')"> c) ¿Cual perro es tuyo?</li>
           </ul>
           <button class="btn" (click)="prevQuestion()">Anterior Pregunta</button>
-          <button class="btn" (click)="submitExam()">Ir a seccion gramatica</button>
+          <button class="btn" (click)="irGramatica()">Ir a seccion gramatica</button>
         </div>
       </div>
 </body>

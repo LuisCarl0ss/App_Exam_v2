@@ -22,6 +22,7 @@ import { ComprensionGramaticaScreenComponent } from './screens/comprension-grama
 import { ComprensionLectoraScreenComponent } from './screens/comprension-lectora-screen/comprension-lectora-screen.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { ScoreScreenComponent } from './screens/score-screen/score-screen.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     HomeScreenComponent,
     ComprensionAudioScreenComponent,
     ComprensionGramaticaScreenComponent,
-    ComprensionLectoraScreenComponent
+    ComprensionLectoraScreenComponent,
+    ScoreScreenComponent
   ],
   imports: [
     BrowserModule,

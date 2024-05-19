@@ -8,14 +8,14 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './login-screen.component.html',
   styleUrls: ['./login-screen.component.scss']
 })
+
 export class LoginScreenComponent implements OnInit {
 
   formLogin: FormGroup;
   public type: String = "password";
-  public username: String = "";
+  public email: String = "";
   public password: String = "";
   public errors:any = {};
-
 
   constructor(
     private userService: UserService,
@@ -31,7 +31,7 @@ export class LoginScreenComponent implements OnInit {
     
   }
 
-  onSubmit() {
+  verificaLogin() {
     this.userService.login(this.formLogin.value)
     .then(response => {
       console.log(response);
@@ -40,22 +40,16 @@ export class LoginScreenComponent implements OnInit {
     .catch(error => {
       console.log(error);
       alert("Correo o contraseña incorrectos")
+      this.formLogin.patchValue({
+        email: '',
+        password: ''
+      });
     }
     )
-  
   }
 
   public registro(){
     this.router.navigate(["registro"])
-  }
-
-  public login(){
-    if(this.username == ""){
-      this.errors.username = "Campo requerido";
-    }
-    if(this.password == ""){
-      this.errors.password = "Campo requerido";
-    }
   }
 
   public showPassword(){
@@ -67,3 +61,9 @@ export class LoginScreenComponent implements OnInit {
   }
 
 }
+
+
+
+
+  
+

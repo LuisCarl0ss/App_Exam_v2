@@ -5,7 +5,7 @@
         </div>
         <div class="section-right">
             <section>
-                <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+                <form [formGroup]="formLogin" (ngSubmit)="verificaLogin()">
                   <div class="mb-3">
                     <h1 class="title">App Examen</h1>
                     <h2 class="title-login">Login</h2>
@@ -13,18 +13,10 @@
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email" placeholder="Correo">
                     <div id="emailHelp" class="form-text">Su correo electronico no se compartirá con nadie más.</div>
                   </div>
-                  <!-- <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Contraeña</label>
-                    <div class="input-group-text" id="show-password" data-password="false">
-                      <i *ngIf="type == 'password'" class="bi bi-eye-fill" (click)="showPassword()"></i>
-                      <i *ngIf="type == 'text'" class="bi bi-eye-slash-fill" (click)="showPassword()"></i>
-                  </div>
-                    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
-                  </div> -->
                   <label for="exampleInputPassword1" class="form-label">Contraeña</label>
                   <div class="pt-3 mb-3">
                     <div class="input-group input-group-merge">
-                        <input type="{{type}}" id="password" name="password_user" class="form-control pwd" placeholder="Contraseña" (keyup.enter)="login()" formControlName="password">
+                        <input type="{{type}}" id="password" name="password_user" class="form-control pwd" placeholder="Contraseña" (keyup.enter)="verificaLogin()" formControlName="password">
                         <div class="input-group-text" id="show-password" data-password="false">
                             <i *ngIf="type == 'password'" class="bi bi-eye-fill" (click)="showPassword()"></i>
                             <i *ngIf="type == 'text'" class="bi bi-eye-slash-fill" (click)="showPassword()"></i>
@@ -32,7 +24,7 @@
                     </div>
                     <div *ngIf="errors.password" class="invalid-feedback">{{ errors.password }}</div>
                 </div>
-                  <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+                  <button type="submit" class="btn btn-primary">Login</button>
                   <div id="registro" class="form-text">¿No tienes una cuenta aún? Registrate</div>
                   <button type="submit" class="btn btn-primary" (click)="registro()">Registrarte</button>
                   <br>

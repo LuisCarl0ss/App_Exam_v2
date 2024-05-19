@@ -6,6 +6,7 @@ import { HomeScreenComponent } from './screens/home-screen/home-screen.component
 import { ComprensionLectoraScreenComponent } from './screens/comprension-lectora-screen/comprension-lectora-screen.component';
 import { ComprensionAudioScreenComponent } from './screens/comprension-audio-screen/comprension-audio-screen.component';
 import { ComprensionGramaticaScreenComponent } from './screens/comprension-gramatica-screen/comprension-gramatica-screen.component';
+import { ScoreScreenComponent } from './screens/score-screen/score-screen.component';
 
 const routes: Routes = [
   { path: '', component: LoginScreenComponent, pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'lectora', component: ComprensionLectoraScreenComponent, pathMatch: 'full'},
   { path: 'audio', component: ComprensionAudioScreenComponent, pathMatch: 'full'},
   { path: 'gramatica', component: ComprensionGramaticaScreenComponent, pathMatch: 'full'},
+  { path: 'score', component: ScoreScreenComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
